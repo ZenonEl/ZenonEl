@@ -65,7 +65,7 @@ A Telegram bot written in C# for media forwarding.
 
 [Link](https://github.com/ZenonEl/TelegramMediaRelayBot)
 
-### 🛰️ Telegram Media Relay Bot
+### 🎮 RemoteGamepad
 Python application for broadcasting gamepad data from device to PC.
 
 **Status:** Work in progress
