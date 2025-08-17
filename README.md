@@ -70,7 +70,7 @@ Python application for broadcasting gamepad data from device to PC.
 
 **Status:** Work in progress
 
-It's a private project at the moment
+[Link](https://github.com/ZenonEl/RemoteGamepad)
 
 ## 🌠 My Learning Journey
 - **C#**: Currently deepening my knowledge of .NET and ASP.NET Core.
