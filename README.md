@@ -1,57 +1,81 @@
-<div align="center">
+<p align="center">
+  <img src="./assets/orbit-header.svg" alt="ZenonEl, Backend Engineer and Applied AI" width="100%">
+</p>
 
-# 🌌 ZenonEl
+<p align="center">
+  <a href="https://zenonel.github.io"><strong>Portfolio</strong></a>
+  · <a href="./README_RU.md">Русский</a>
+  · <a href="https://github.com/ZenonEl?tab=repositories">Repositories</a>
+  · <a href="mailto:zentfany@yandex.ru">Email</a>
+</p>
 
-Backend engineering · applied AI · open source
+I build backend systems and the tools around them, from product APIs and data
+pipelines to agent-facing workflows that keep requirements traceable. Most of
+my commercial work is in Python, but I choose the stack around the problem. AI
+agents help with analysis and implementation; design decisions, verification,
+and the result remain my responsibility.
 
-</div>
+## What I build
 
-I am Ivan, a backend engineer with around two years of commercial experience,
-mostly in Python. I take ambiguous tasks through requirements, implementation,
-verification, and release. I use AI agents to move faster, but I remain
-responsible for design decisions and what ships.
+### [mnemo](https://github.com/ZenonEl/mnemo)
 
-I choose the language around the problem. Recent work includes Python, C#/.NET,
-TypeScript, PHP/PrestaShop, and Rust.
+Project requirements rarely arrive as clean tickets. They emerge from project
+channels, documents, screenshots, feedback, and later corrections. Mnemo keeps
+that raw material together with its source, date, attribution, and links to
+requirements, decisions, and open questions. A 20-rule linter checks the
+archive; a separate self-check compares the published standard with its
+implementation.
 
-## 🛰️ Selected projects
+`Python` · `Claude Code plugin` · `AGPL-3.0 / CC BY-SA 4.0`
 
-| Project | What it does |
-|---|---|
-| [mnemo](https://github.com/ZenonEl/mnemo) | Claude Code plugin and format for project evidence. It stores conversations, specifications, files, feedback, provenance, attribution, requirements, decisions, and open questions in a verifiable archive. |
-| [herald](https://github.com/ZenonEl/herald) | Local MCP gateway for messages between AI agents and people. It captures incoming material for later archival and sends agent-prepared updates through configured routes. |
-| [TelegramMediaRelayBot](https://github.com/ZenonEl/TelegramMediaRelayBot) | Self-hosted .NET bot with modular downloaders, a persistent queue, 34 unit tests in CI, and local Bot API support for files up to 2 GB. |
-| [confident-uncertainty](https://github.com/ZenonEl/confident-uncertainty) | Claude Code and Codex skill that turns uncertain status language into concise statements without hiding what is still unknown. |
+### [herald](https://github.com/ZenonEl/herald)
 
-## 🪐 AI workflow
+Herald handles the live edge of the same workflow. It captures incoming
+messages and files into a local buffer for later import into mnemo, and sends
+agent-prepared updates through configured communication routes. It moves
+material between people and agents without becoming a second archive.
 
-My tools keep three concerns separate:
+`Python` · `MCP` · `111 tests` · `AGPL-3.0`
 
-- **mnemo** stores source material and its provenance;
-- **herald** handles incoming and outgoing communication;
-- **ephemeris** keeps daily state and hands the next session links to the source
-  artifacts instead of copying their contents.
+### [TelegramMediaRelayBot](https://github.com/ZenonEl/TelegramMediaRelayBot)
 
-## 🔭 Engineering approach
+A self-hosted .NET media relay outside the agent-tooling stack. It combines a
+local Bot API server, modular downloaders, and a persistent queue; files up to
+2 GB are supported, and 34 unit tests run in CI. This project is the clearest
+public example of my C#/.NET work.
 
-- Choose architecture for the scale and risk of the task, not for the pattern name.
-- Check critical paths manually and with automated tests.
-- Keep releases versioned and changes reviewable through CI, issues, and small pull requests.
-- Treat AI output as a draft to inspect, test, and own.
+`C#` · `.NET 10` · `Docker` · `AGPL-3.0`
 
-## 🧰 Working stack
+## How the AI workflow connects
 
-**Primary:** Python, SQL · FastAPI, Django/DRF, Celery · PostgreSQL, Redis, Qdrant
+```mermaid
+flowchart LR
+    people["People and project channels"] -->|capture| herald["herald<br/>communication boundary"]
+    herald -->|import| mnemo["mnemo<br/>raw context and provenance"]
+    mnemo -->|facts, requirements, questions| ephemeris["ephemeris<br/>daily state and handoff"]
+    ephemeris -->|source links| session["Next agent session"]
+    session -->|prepared update| herald
+```
 
-**Other:** C#/.NET, TypeScript, PHP/PrestaShop, Rust · ASP.NET Core, Tauri
+Each tool has a narrow role. Mnemo keeps durable evidence, Herald handles
+communication, and [Ephemeris](https://github.com/ZenonEl/ephemeris) records the
+state of the day in GitHub issues. A handoff passes addresses to source material
+instead of rewriting the same context for the next session.
 
-**Tooling:** Docker, Linux, nginx, GitHub Actions · Claude Code, Codex, MCP, OpenRouter
+## Engineering practice
 
-## ✦ Elsewhere
+I use versioned formats, CI, automated tests, manual critical-path checks, and
+small reviewable changes. Public repositories also document known limits and
+discarded approaches. AI-generated code is a draft until I have checked its
+logic, failure modes, and behaviour in the system around it.
 
-- [zenonel.github.io](https://zenonel.github.io)
-- [zentfany@yandex.ru](mailto:zentfany@yandex.ru)
+- [Mnemo standard and integrity rules](https://github.com/ZenonEl/mnemo/tree/main/SPEC)
+- [Herald test suite](https://github.com/ZenonEl/herald/tree/main/tests)
+- [TelegramMediaRelayBot CI](https://github.com/ZenonEl/TelegramMediaRelayBot/actions)
 
-<div align="center">
-  <sub>Still exploring the code universe, now with fewer constellations and more tests.</sub>
-</div>
+## Portfolio
+
+The [site](https://zenonel.github.io) is the visual companion to this profile:
+project pages, screenshots, downloads, and the longer stories that do not fit in
+a repository card. It currently covers my earlier desktop projects; the next
+revision will add the engineering case studies behind the work above.
