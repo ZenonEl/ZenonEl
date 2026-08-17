@@ -6,7 +6,6 @@
   <a href="https://zenonel.github.io"><strong>Портфолио</strong></a>
   · <a href="./README.md">English</a>
   · <a href="https://github.com/ZenonEl?tab=repositories">Репозитории</a>
-  · <a href="mailto:zentfany@yandex.ru">Почта</a>
 </p>
 
 Я разрабатываю бекенд-системы и инструменты вокруг них: продуктовые API,

@@ -6,7 +6,6 @@
   <a href="https://zenonel.github.io"><strong>Portfolio</strong></a>
   · <a href="./README_RU.md">Русский</a>
   · <a href="https://github.com/ZenonEl?tab=repositories">Repositories</a>
-  · <a href="mailto:zentfany@yandex.ru">Email</a>
 </p>
 
 I build backend systems and the tools around them, from product APIs and data
