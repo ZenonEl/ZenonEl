@@ -8,74 +8,70 @@
   · <a href="https://github.com/ZenonEl?tab=repositories">Repositories</a>
 </p>
 
-I build backend systems and the tools around them, from product APIs and data
-pipelines to agent-facing workflows that keep requirements traceable. Most of
-my commercial work is in Python, but I choose the stack around the problem. AI
-agents help with analysis and implementation; design decisions, verification,
-and the result remain my responsibility.
+Backend engineer. I take services to production: payments, receipts, delivery,
+banks and LLM features. In 2026, working with AI agents, I took an online store
+from requirements to 101 orders before its official launch. I write mostly in
+Python and pick up another stack when the task needs it. Agents write the code;
+the decisions and the result are mine.
 
-## What I build
+## What I built
 
 ### [mnemo](https://github.com/ZenonEl/mnemo)
 
-Project requirements rarely arrive as clean tickets. They emerge from project
-channels, documents, screenshots, feedback, and later corrections. Mnemo keeps
-that raw material together with its source, date, attribution, and links to
-requirements, decisions, and open questions. A 27-rule linter and 126 tests
-check the archive; a separate self-check compares the published standard with its
-implementation.
+Project requirements arrive in pieces: messages, documents, screenshots,
+corrections. mnemo keeps that material in a local archive and remembers, for
+each piece, where it came from, when and from whom, and which requirement,
+decision or question it belongs to. An agent in Claude Code or Codex goes back
+to the source instead of a retelling. A 27-rule linter and 126 tests check the
+archive.
 
 `Python` · `Claude Code and Codex plugin` · `AGPL-3.0 / CC BY-SA 4.0`
 
 ### [herald](https://github.com/ZenonEl/herald)
 
-Herald handles the live edge of the same workflow. It captures incoming
-messages and files into a local buffer for later import into mnemo, and sends
-agent-prepared updates through configured communication routes. It moves
-material between people and agents without becoming a second archive.
+herald connects an agent session to Telegram. Incoming messages and files reach
+the session, and the agent sends replies only along allowed routes. I can write
+to an open session straight from the bot.
 
 `Python` · `MCP` · `192 tests` · `AGPL-3.0`
 
 ### [TelegramMediaRelayBot](https://github.com/ZenonEl/TelegramMediaRelayBot)
 
-A self-hosted .NET media relay outside the agent-tooling stack. It combines a
-local Bot API server, modular downloaders, and a persistent queue; files up to
-2 GB are supported, and 34 unit tests run in CI. This project is the clearest
-public example of my C#/.NET work.
+A self-hosted .NET Telegram bot that downloads videos and images from a link and
+forwards them to contacts by their privacy rules. Its own Bot API server lets
+files up to 2 GB through, the download queue survives a restart, and 34 unit
+tests run in CI. It is my main public C# project.
 
 `C#` · `.NET 10` · `Docker` · `AGPL-3.0`
 
-## How the AI workflow connects
+## How the tools work together
 
 ```mermaid
 flowchart LR
-    people["People and project channels"] -->|capture| herald["herald<br/>communication boundary"]
-    herald -->|import| mnemo["mnemo<br/>raw context and provenance"]
-    mnemo -->|facts, requirements, questions| ephemeris["ephemeris<br/>daily state and handoff"]
-    ephemeris -->|source links| session["Next agent session"]
-    session -->|prepared update| herald
+    people["People and project chats"] -->|messages| herald["herald<br/>communication"]
+    herald -->|import| mnemo["mnemo<br/>archive with sources"]
+    mnemo -->|facts and questions| ephemeris["ephemeris<br/>work day"]
+    ephemeris -->|links to sources| session["Next agent session"]
+    session -->|reply| herald
 ```
 
-Each tool has a narrow role. Mnemo keeps durable evidence, Herald handles
-communication, and [Ephemeris](https://github.com/ZenonEl/ephemeris) records the
-state of the day in GitHub issues. A handoff passes addresses to source material
-instead of rewriting the same context for the next session.
+mnemo keeps the material, herald talks to people, and
+[ephemeris](https://github.com/ZenonEl/ephemeris) keeps the work day in one
+GitHub issue. When a session ends, the next one gets links to the sources rather
+than a retelling.
 
-## Engineering practice
+## How I check the work
 
-I use versioned formats, CI, automated tests, manual critical-path checks, and
-small reviewable changes. Public repositories also document known limits and
-discarded approaches. AI agents write most of the code. It stays a draft until
-it has passed subagent review until LGTM and I have checked its behaviour by
-hand and in live runs against the requirements.
+AI agents write most of the code. A change stays a draft until subagent
+reviewers have checked it and I have run it live against the requirements. The
+public repositories have tests and CI, and their READMEs record known limits and
+the approaches I dropped.
 
-- [Mnemo standard and integrity rules](https://github.com/ZenonEl/mnemo/tree/main/SPEC)
-- [Herald test suite](https://github.com/ZenonEl/herald/tree/main/tests)
+- [mnemo standard and integrity rules](https://github.com/ZenonEl/mnemo/tree/main/SPEC)
+- [herald tests](https://github.com/ZenonEl/herald/tree/main/tests)
 - [TelegramMediaRelayBot CI](https://github.com/ZenonEl/TelegramMediaRelayBot/actions)
 
 ## Portfolio
 
-The [site](https://zenonel.github.io) is the visual companion to this profile:
-project pages, screenshots, downloads, and the longer stories that do not fit in
-a repository card. It currently covers my earlier desktop projects; the next
-revision will add the engineering case studies behind the work above.
+The [site](https://zenonel.github.io) has five anonymised cases from 2026 with
+their numbers, project pages and a CV.
