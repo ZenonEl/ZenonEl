@@ -35,6 +35,22 @@ to an open session straight from the bot.
 
 `Python` · `MCP` · `192 tests` · `AGPL-3.0`
 
+### [ephemeris](https://github.com/ZenonEl/ephemeris)
+
+ephemeris keeps a work day in one GitHub issue. When an agent session ends, the
+next one gets addresses instead of a retelling: comments, commits, paths and
+links into the mnemo archive. 236 work dailies have been kept this way since May.
+
+`Markdown` · `GitHub CLI` · `Claude Code and Codex plugin`
+
+### [kanon](https://github.com/ZenonEl/kanon)
+
+Before work starts, kanon turns a task into a checklist of observable results
+and the proof each one needs. An item closes when proof is inserted; a tick is
+not enough. A 61-check self-test, CI green.
+
+`Python` · `Claude Code hooks` · `Codex`
+
 ### [TelegramMediaRelayBot](https://github.com/ZenonEl/TelegramMediaRelayBot)
 
 A self-hosted .NET Telegram bot that downloads videos and images from a link and
@@ -52,13 +68,17 @@ flowchart LR
     herald -->|import| mnemo["mnemo<br/>archive with sources"]
     mnemo -->|facts and questions| ephemeris["ephemeris<br/>work day"]
     ephemeris -->|links to sources| session["Next agent session"]
+    kanon["kanon<br/>acceptance checklist"] -->|what counts as done| session
     session -->|reply| herald
 ```
 
-mnemo keeps the material, herald talks to people, and
-[ephemeris](https://github.com/ZenonEl/ephemeris) keeps the work day in one
-GitHub issue. When a session ends, the next one gets links to the sources rather
-than a retelling.
+## More projects
+
+- [zapret2-nix](https://github.com/ZenonEl/zapret2-nix): a NixOS module and presets for zapret2; the strategy switches on a running machine without a rebuild.
+- [CrabVoice](https://github.com/ZenonEl/CrabVoice): a Tauri app that plays a synchronised voice-over on top of online video; v1.0.0 in eleven days.
+- [RemoteGamepad](https://github.com/ZenonEl/RemoteGamepad): a phone as a wireless Xbox 360 gamepad for Linux games.
+- [OwlWhisper](https://github.com/ZenonEl/OwlWhisper): a serverless P2P messenger in Go, stopped at MVP when the cost of making it safe became clear.
+- [HeartRender](https://github.com/ZenonEl/HeartRender): heart-rate data from Gadgetbridge turned into a printable PDF.
 
 ## How I check the work
 

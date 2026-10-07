@@ -34,6 +34,22 @@ herald связывает сессию агента с Telegram. Входящи�
 
 `Python` · `MCP` · `192 теста` · `AGPL-3.0`
 
+### [ephemeris](https://github.com/ZenonEl/ephemeris)
+
+ephemeris ведёт рабочий день в одном GitHub issue. Когда сессия агента
+заканчивается, следующей остаётся не пересказ, а адреса: комментарии, коммиты,
+пути и ссылки в архив mnemo. С мая так ведутся 236 рабочих дейликов.
+
+`Markdown` · `GitHub CLI` · `плагин Claude Code и Codex`
+
+### [kanon](https://github.com/ZenonEl/kanon)
+
+kanon до начала работы превращает задачу в чеклист наблюдаемых результатов и
+доказательств к каждому. Пункт закрывается вставленным доказательством, одной
+галочки мало. Самотест из 61 проверки, CI зелёный.
+
+`Python` · `хуки Claude Code` · `Codex`
+
 ### [TelegramMediaRelayBot](https://github.com/ZenonEl/TelegramMediaRelayBot)
 
 Self-hosted Telegram-бот на .NET: скачивает видео и картинки по ссылке и
@@ -51,13 +67,17 @@ flowchart LR
     herald -->|импорт| mnemo["mnemo<br/>архив с источниками"]
     mnemo -->|факты и вопросы| ephemeris["ephemeris<br/>рабочий день"]
     ephemeris -->|ссылки на источники| session["Следующая сессия агента"]
+    kanon["kanon<br/>чеклист приёмки"] -->|что считать готовым| session
     session -->|ответ| herald
 ```
 
-mnemo хранит, herald связывает с людьми, а
-[ephemeris](https://github.com/ZenonEl/ephemeris) ведёт рабочий день в одном
-GitHub issue. Когда сессия заканчивается, следующая получает ссылки на исходники,
-а не пересказ.
+## Ещё проекты
+
+- [zapret2-nix](https://github.com/ZenonEl/zapret2-nix): модуль NixOS и пресеты для zapret2, стратегия меняется на работающей машине без пересборки.
+- [CrabVoice](https://github.com/ZenonEl/CrabVoice): приложение на Tauri, синхронная закадровая озвучка поверх онлайн-видео; до v1.0.0 за 11 дней.
+- [RemoteGamepad](https://github.com/ZenonEl/RemoteGamepad): телефон как беспроводной геймпад Xbox 360 для игр на Linux.
+- [OwlWhisper](https://github.com/ZenonEl/OwlWhisper): P2P-мессенджер на Go без сервера, остановлен на MVP, когда стала видна цена безопасности.
+- [HeartRender](https://github.com/ZenonEl/HeartRender): пульс из базы Gadgetbridge в PDF для печати.
 
 ## Как я проверяю работу
 
