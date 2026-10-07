@@ -21,11 +21,11 @@ and the result remain my responsibility.
 Project requirements rarely arrive as clean tickets. They emerge from project
 channels, documents, screenshots, feedback, and later corrections. Mnemo keeps
 that raw material together with its source, date, attribution, and links to
-requirements, decisions, and open questions. A 20-rule linter checks the
-archive; a separate self-check compares the published standard with its
+requirements, decisions, and open questions. A 27-rule linter and 126 tests
+check the archive; a separate self-check compares the published standard with its
 implementation.
 
-`Python` · `Claude Code plugin` · `AGPL-3.0 / CC BY-SA 4.0`
+`Python` · `Claude Code and Codex plugin` · `AGPL-3.0 / CC BY-SA 4.0`
 
 ### [herald](https://github.com/ZenonEl/herald)
 
@@ -34,7 +34,7 @@ messages and files into a local buffer for later import into mnemo, and sends
 agent-prepared updates through configured communication routes. It moves
 material between people and agents without becoming a second archive.
 
-`Python` · `MCP` · `111 tests` · `AGPL-3.0`
+`Python` · `MCP` · `192 tests` · `AGPL-3.0`
 
 ### [TelegramMediaRelayBot](https://github.com/ZenonEl/TelegramMediaRelayBot)
 
@@ -65,8 +65,9 @@ instead of rewriting the same context for the next session.
 
 I use versioned formats, CI, automated tests, manual critical-path checks, and
 small reviewable changes. Public repositories also document known limits and
-discarded approaches. AI-generated code is a draft until I have checked its
-logic, failure modes, and behaviour in the system around it.
+discarded approaches. AI agents write most of the code. It stays a draft until
+it has passed subagent review until LGTM and I have checked its behaviour by
+hand and in live runs against the requirements.
 
 - [Mnemo standard and integrity rules](https://github.com/ZenonEl/mnemo/tree/main/SPEC)
 - [Herald test suite](https://github.com/ZenonEl/herald/tree/main/tests)
