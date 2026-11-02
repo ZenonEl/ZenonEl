@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/orbit-header.svg" alt="ZenonEl, Backend Engineer and Applied AI" width="100%">
+  <img src="./assets/orbit-header.svg" alt="ZenonEl, AI-native Backend Engineer" width="100%">
 </p>
 
 <p align="center">
@@ -8,11 +8,12 @@
   · <a href="https://github.com/ZenonEl?tab=repositories">Repositories</a>
 </p>
 
-Backend engineer. I take services to production: payments, receipts, delivery,
-banks and LLM features. In 2026, working with AI agents, I took an online store
-from requirements to 101 orders before its official launch. I write mostly in
-Python and pick up another stack when the task needs it. Agents write the code;
-the decisions and the result are mine.
+Backend engineer working through AI agents: Claude Code and Codex write the code,
+and I set their tasks, decide the architecture and accept the result. Since June
+2026 I have run three or more projects at once: payments, receipts, delivery, banks
+and LLM features. An online store I led from requirements to sales took 432 payments
+totalling 3.53 million RUB between 9 September and 27 October, while still closed
+to search engines.
 
 ## What I built
 
@@ -39,7 +40,7 @@ to an open session straight from the bot.
 
 ephemeris keeps a work day in one GitHub issue. When an agent session ends, the
 next one gets addresses instead of a retelling: comments, commits, paths and
-links into the mnemo archive. 236 work dailies have been kept this way since May.
+links into the mnemo archive. More than 280 work dailies have been kept this way since May.
 
 `Markdown` · `GitHub CLI` · `Claude Code and Codex plugin`
 
@@ -93,5 +94,5 @@ the approaches I dropped.
 
 ## Portfolio
 
-The [site](https://zenonel.github.io) has five anonymised cases from 2026 with
+The [site](https://zenonel.github.io) has seven anonymised cases from 2026 with
 their numbers, project pages and a CV.
